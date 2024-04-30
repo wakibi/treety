@@ -2,7 +2,7 @@ from collections import defaultdict
 from typing import Dict, List
 
 
-def sortUtility(adjancency_list: Dict, LHS_to_index_mapping: Dict) -> List:
+def sortUtility(adjancency_list: Dict[str, List[str]], LHS_to_index_mapping: Dict[str, int]) -> List[str]:
     in_degrees = { node: 0 for node in adjancency_list }
     for node in adjancency_list:
         for neighbour in adjancency_list[node]:
@@ -30,7 +30,7 @@ def sortUtility(adjancency_list: Dict, LHS_to_index_mapping: Dict) -> List:
     return topological_order
         
 
-def sortExpressions(expressions: List) -> Dict:
+def sortExpressions(expressions: List[str]) -> List[str]:
     '''
     Assumptions;
     - Variables can be x, y, z1, xyz, etc i.e they start with a letter
